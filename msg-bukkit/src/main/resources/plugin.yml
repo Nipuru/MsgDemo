@@ -1,0 +1,9 @@
+name: MsgDemo
+version: '${version}'
+main: top.nipuru.msgdemo.bukkit.MsgDemo
+api-version: 1.18
+author: Nipuru
+depend:
+  - AfyBroker
+commands:
+  msg:

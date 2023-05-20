@@ -1,0 +1,4 @@
+name: MsgDemo
+version: '${version}'
+author: Nipuru
+main: top.nipuru.msgdemo.broker.MsgDemo

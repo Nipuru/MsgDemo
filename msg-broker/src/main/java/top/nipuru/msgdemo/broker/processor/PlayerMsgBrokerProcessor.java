@@ -32,7 +32,7 @@ public class PlayerMsgBrokerProcessor extends SyncUserProcessor<PlayerMsgMessage
         }
 
         BrokerClientProxy senderBukkit = senderPlayer.getBukkitClientProxy();
-        BrokerClientProxy receiverBukkit = senderPlayer.getBukkitClientProxy();
+        BrokerClientProxy receiverBukkit = receiverPlayer.getBukkitClientProxy();
 
         //发送者或接受所在的bukkit代理不存在则返回false
         if (senderBukkit == null || receiverBukkit == null) {

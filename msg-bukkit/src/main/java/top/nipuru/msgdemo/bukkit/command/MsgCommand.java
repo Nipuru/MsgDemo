@@ -24,7 +24,7 @@ public class MsgCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
-        if (!(sender instanceof Player player)) {
+        if (!(sender instanceof Player)) {
             sender.sendMessage("只有玩家才能运行此指令");
             return true;
         }
@@ -42,7 +42,7 @@ public class MsgCommand implements CommandExecutor {
 
         //消息主体
         PlayerMsgMessage message = new PlayerMsgMessage()
-                .setSender(player.getName())
+                .setSender(sender.getName())
                 .setReceiver(receiver)
                 .setMsg(msg.toString());
 

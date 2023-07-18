@@ -12,7 +12,7 @@ subprojects {
 
 
     ext{
-        set("brokerVersion","1.3")
+        set("brokerVersion","1.4")
     }
 
     repositories {
@@ -23,7 +23,8 @@ subprojects {
     }
 
     java {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     dependencies {
@@ -39,7 +40,6 @@ subprojects {
 
     tasks.withType<JavaCompile> {
         options.encoding = Charsets.UTF_8.name()
-        options.release.set(17)
     }
 
 }

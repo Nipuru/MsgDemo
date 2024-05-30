@@ -8,9 +8,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class MsgDemo extends JavaPlugin {
 
     @Override
+    public void onLoad(){
+        Broker.registerUserProcessor(new PlayerMsgBukkitProcessor());
+    }
+
+    @Override
     public void onEnable(){
         getCommand("msg").setExecutor(new MsgCommand(this));
-        Broker.registerUserProcessor(new PlayerMsgBukkitProcessor());
     }
 
 }

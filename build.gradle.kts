@@ -12,7 +12,7 @@ subprojects {
 
 
     ext{
-        set("brokerVersion","1.4")
+        set("brokerVersion","1.7")
     }
 
     repositories {

@@ -1,5 +1,6 @@
 package top.nipuru.msgdemo.bukkit;
 
+import net.afyer.afybroker.client.BrokerClientBuilder;
 import top.nipuru.msgdemo.bukkit.command.MsgCommand;
 import net.afyer.afybroker.client.Broker;
 import top.nipuru.msgdemo.bukkit.processor.PlayerMsgBukkitProcessor;
@@ -9,7 +10,11 @@ public class MsgDemo extends JavaPlugin {
 
     @Override
     public void onLoad(){
-        Broker.registerUserProcessor(new PlayerMsgBukkitProcessor());
+        Broker.buildAction(this::buildBroker);
+    }
+
+    private void buildBroker(BrokerClientBuilder builder){
+        builder.registerUserProcessor(new PlayerMsgBukkitProcessor());
     }
 
     @Override

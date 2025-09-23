@@ -2,11 +2,11 @@ package top.nipuru.msgdemo.broker.processor;
 
 import com.alipay.remoting.BizContext;
 import com.alipay.remoting.rpc.protocol.SyncUserProcessor;
+import net.afyer.afybroker.server.proxy.BrokerClientItem;
 import top.nipuru.msgdemo.message.PlayerMsgMessage;
 import lombok.Setter;
 import net.afyer.afybroker.server.BrokerServer;
 import net.afyer.afybroker.server.aware.BrokerServerAware;
-import net.afyer.afybroker.server.proxy.BrokerClientProxy;
 import net.afyer.afybroker.server.proxy.BrokerPlayer;
 
 /**
@@ -31,8 +31,8 @@ public class PlayerMsgBrokerProcessor extends SyncUserProcessor<PlayerMsgMessage
             return false;
         }
 
-        BrokerClientProxy senderBukkit = senderPlayer.getBukkitClientProxy();
-        BrokerClientProxy receiverBukkit = receiverPlayer.getBukkitClientProxy();
+        BrokerClientItem senderBukkit = senderPlayer.getServer();
+        BrokerClientItem receiverBukkit = receiverPlayer.getServer();
 
         //发送者或接受所在的bukkit代理不存在则返回false
         if (senderBukkit == null || receiverBukkit == null) {

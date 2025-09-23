@@ -11,7 +11,7 @@ subprojects {
     version = "1.0"
 
     ext{
-        set("brokerVersion","2.0")
+        set("brokerVersion","2.4")
     }
 
     repositories {
